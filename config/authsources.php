@@ -64,15 +64,15 @@ $config = array(
     ),
 
 
-    /*
+    
     'example-sql' => array(
         'sqlauth:SQL',
-        'dsn' => 'pgsql:host=sql.example.org;port=5432;dbname=simplesaml',
-        'username' => 'simplesaml',
-        'password' => 'secretpassword',
-        'query' => 'SELECT uid, givenName, email, eduPersonPrincipalName FROM users WHERE uid = :username AND password = SHA2(CONCAT((SELECT salt FROM users WHERE uid = :username), :password),256);',
+        'dsn' => 'mysql:host=localhost;port=null;dbname=samlidp',
+        'username' => 'root',
+        'password' => '',
+        'query' => 'SELECT name as uid, email FROM registered WHERE name = :username AND password = md5(:password)',
     ),
-    */
+    
 
     /*
     'example-static' => array(
@@ -83,7 +83,7 @@ $config = array(
     ),
     */
 
-    
+    /*
     'example-userpass' => array(
         'exampleauth:UserPass',
 
@@ -101,6 +101,7 @@ $config = array(
             'eduPersonAffiliation' => array('member', 'employee'),
         ),
     ),
+    */
     
 
     /*
