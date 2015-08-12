@@ -3,21 +3,11 @@
 <head>
 <title>Registration</title>
 
-<style type="text/css">
-.registration-box {
-	width: 500px;
-  	margin: 20px auto;
-  	padding: 50px;
-  	border: solid blue 10px;
-	-webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    	box-sizing: border-box;
-}
-
-</style>
+<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css"></link>
+<script type="text/javascript" src="bootstrap/js/min.js"></script>
 </head>
-<body style="text-align: center;">
-<div class="registration-box">
+<body>
+<div class="container">
 
 <?php 
 
@@ -47,33 +37,46 @@ if($pwd == $confPwd){
 
 ?>
 
-
-	<div class="page-header"> 
-		<h1>Registration</h1>
-	</div>
-	<form action="register.php" method="post" class="form-horizontal">
-		<div class="form-group">
-			<label class="col-sm-2 control-label"> User Name</label>	
-			<input type="text" name="name" id="name" class="form-control"></input>
-		</div>
-		<br/>
-		<div class="form-group">
-			<label class="col-sm-2 control-label"> Email</label>	
-			<input type="email" name="email" id="email" class="form-control"></input>
-		</div>
-		<br/>
-		<div>
-			<label> Password </label>
-			<input type="password" name="pwd" id="pwd"></input>
-		</div>
-		<br>
-		<div>
-			<label> Confirm password </label>
-			<input type="password" name="confPwd" id="confPwd"></input>
-		</div>
-		<br>
-		<input type="submit" value="Register" />
+    <div class="page-header"> 
+        <h1>IDP Registration</h1>
+    </div>
+    <div class="content">
+        <form action="register.php" method="post" class="form-horizontal">
+            <div class="form-group">
+                <label class="col-md-2 control-label"> User Name</label>
+                <div class="col-md-5">
+                    <input type="text" name="name" id="name" class="form-control" required="required"/>
+                </div>
+            </div>
+		
+            <div class="form-group">
+                <label class="col-md-2 control-label"> Email</label>
+                <div class="col-md-5">
+                    <input type="email" name="email" id="email" class="form-control" required="required"/>
+                </div>
+            </div>
+		
+            <div class="form-group">
+                <label class="col-md-2 control-label"> Password </label>
+                <div class="col-md-5">
+                    <input type="password" name="pwd" id="pwd" class="form-control" required="required"/>
+                </div>
+            </div>
+		
+            <div class="form-group">
+                <label class="col-md-2 control-label"> Confirm password </label>
+                <div class="col-md-5">
+                    <input type="password" name="confPwd" id="confPwd" class="form-control" required="required"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-info">Sign up</button>
+                </div>
+            </div>
 	</form>
+    </div>
+	
 </div>
 
 </body>
